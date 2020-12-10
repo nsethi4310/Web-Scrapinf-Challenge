@@ -124,6 +124,51 @@
   {
    "cell_type": "code",
    "execution_count": 7,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "browser.quit()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {
+    "scrolled": true
+   },
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "[WDM] - Current google-chrome version is 87.0.4280\n",
+      "[WDM] - Get LATEST driver version for 87.0.4280\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      " \n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "[WDM] - Driver [C:\\Users\\sethi\\.wdm\\drivers\\chromedriver\\win32\\87.0.4280.88\\chromedriver.exe] found in cache\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Creating executable path\n",
+    "executable_path = {'executable_path': ChromeDriverManager().install()}\n",
+    "browser = Browser('chrome', **executable_path, headless=False)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
    "metadata": {
     "scrolled": true
    },
@@ -136,7 +181,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": 10,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -148,41 +193,12 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
+   "execution_count": 11,
    "metadata": {},
    "outputs": [],
    "source": [
     "results = soup.find('figure', class_='lede')\n",
     "results2=results.a['href']\n"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 10,
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "'/spaceimages/images/largesize/PIA18907_hires.jpg'"
-      ]
-     },
-     "execution_count": 10,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "results2"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 11,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "featured_image_url= 'https://www.jpl.nasa.gov' + results2"
    ]
   },
   {
@@ -193,10 +209,39 @@
     {
      "data": {
       "text/plain": [
-       "'https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA18907_hires.jpg'"
+       "'/spaceimages/images/largesize/PIA19039_hires.jpg'"
       ]
      },
      "execution_count": 12,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "results2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "featured_image_url= 'https://www.jpl.nasa.gov' + results2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA19039_hires.jpg'"
+      ]
+     },
+     "execution_count": 14,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -207,20 +252,48 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 15,
    "metadata": {
     "scrolled": false
    },
    "outputs": [],
    "source": [
-    "# # Creating executable path\n",
-    "# executable_path = {'executable_path': ChromeDriverManager().install()}\n",
-    "# browser = Browser('chrome', **executable_path, headless=False)"
+    "browser.quit()"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 13,
+   "execution_count": 16,
+   "metadata": {
+    "scrolled": true
+   },
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "[WDM] - Current google-chrome version is 87.0.4280\n",
+      "[WDM] - Get LATEST driver version for 87.0.4280\n",
+      "[WDM] - Driver [C:\\Users\\sethi\\.wdm\\drivers\\chromedriver\\win32\\87.0.4280.88\\chromedriver.exe] found in cache\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      " \n"
+     ]
+    }
+   ],
+   "source": [
+    "# Creating executable path\n",
+    "executable_path = {'executable_path': ChromeDriverManager().install()}\n",
+    "browser = Browser('chrome', **executable_path, headless=False)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
    "metadata": {
     "scrolled": true
    },
@@ -233,7 +306,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 14,
+   "execution_count": 18,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -243,7 +316,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 15,
+   "execution_count": 19,
    "metadata": {},
    "outputs": [
     {
@@ -255,7 +328,7 @@
        " <div class=\"description\"><a class=\"itemLink product-item\" href=\"/search/map/Mars/Viking/valles_marineris_enhanced\"><h3>Valles Marineris Hemisphere Enhanced</h3></a><span class=\"subtitle\" style=\"float:left\">image/tiff 27 MB</span><span class=\"pubDate\" style=\"float:right\"></span><br/><p>Mosaic of the Valles Marineris hemisphere of Mars projected into point perspective, a view similar to that which one would see from a spacecraft. The distance is 2500 kilometers from the surface of…</p></div>]"
       ]
      },
-     "execution_count": 15,
+     "execution_count": 19,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -267,7 +340,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 16,
+   "execution_count": 20,
    "metadata": {},
    "outputs": [
     {
@@ -279,7 +352,7 @@
        " 'https://astrogeology.usgs.gov/search/map/Mars/Viking/valles_marineris_enhanced']"
       ]
      },
-     "execution_count": 16,
+     "execution_count": 20,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -302,7 +375,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 17,
+   "execution_count": 21,
    "metadata": {},
    "outputs": [
     {
@@ -314,7 +387,7 @@
        " 'Valles Marineris Hemisphere Enhanced']"
       ]
      },
-     "execution_count": 17,
+     "execution_count": 21,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -325,39 +398,12 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 18,
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "['https://astrogeology.usgs.gov/search/map/Mars/Viking/cerberus_enhanced',\n",
-       " 'https://astrogeology.usgs.gov/search/map/Mars/Viking/schiaparelli_enhanced',\n",
-       " 'https://astrogeology.usgs.gov/search/map/Mars/Viking/syrtis_major_enhanced',\n",
-       " 'https://astrogeology.usgs.gov/search/map/Mars/Viking/valles_marineris_enhanced']"
-      ]
-     },
-     "execution_count": 18,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "\n",
-    "new_url"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 22,
+   "execution_count": 23,
    "metadata": {
     "scrolled": true
    },
    "outputs": [],
    "source": [
-    "# # Creating executable path\n",
-    "# executable_path = {'executable_path': ChromeDriverManager().install()}\n",
-    "# browser = Browser('chrome', **executable_path, headless=False)\n",
     "\n",
     "full_imgs=[]\n",
     "\n",
@@ -377,16 +423,16 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 23,
+   "execution_count": 24,
    "metadata": {},
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "[<img class=\"wide-image\" src=\"/cache/images/b3c7c6c9138f57b4756be9b9c43e3a48_valles_marineris_enhanced.tif_full.jpg\"/>]"
+       "[<img class=\"wide-image\" src=\"/cache/images/f5e372a36edfa389625da6d0cc25d905_cerberus_enhanced.tif_full.jpg\"/>]"
       ]
      },
-     "execution_count": 23,
+     "execution_count": 24,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -397,7 +443,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 24,
+   "execution_count": 25,
    "metadata": {
     "scrolled": true
    },
@@ -405,10 +451,10 @@
     {
      "data": {
       "text/plain": [
-       "'/cache/images/b3c7c6c9138f57b4756be9b9c43e3a48_valles_marineris_enhanced.tif_full.jpg'"
+       "'/cache/images/f5e372a36edfa389625da6d0cc25d905_cerberus_enhanced.tif_full.jpg'"
       ]
      },
-     "execution_count": 24,
+     "execution_count": 25,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -419,19 +465,19 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 25,
+   "execution_count": 26,
    "metadata": {},
    "outputs": [
     {
      "data": {
       "text/plain": [
        "['https://astrogeology.usgs.gov//cache/images/f5e372a36edfa389625da6d0cc25d905_cerberus_enhanced.tif_full.jpg',\n",
-       " 'https://astrogeology.usgs.gov//cache/images/3778f7b43bbbc89d6e3cfabb3613ba93_schiaparelli_enhanced.tif_full.jpg',\n",
-       " 'https://astrogeology.usgs.gov//cache/images/555e6403a6ddd7ba16ddb0e471cadcf7_syrtis_major_enhanced.tif_full.jpg',\n",
-       " 'https://astrogeology.usgs.gov//cache/images/b3c7c6c9138f57b4756be9b9c43e3a48_valles_marineris_enhanced.tif_full.jpg']"
+       " 'https://astrogeology.usgs.gov//cache/images/f5e372a36edfa389625da6d0cc25d905_cerberus_enhanced.tif_full.jpg',\n",
+       " 'https://astrogeology.usgs.gov//cache/images/f5e372a36edfa389625da6d0cc25d905_cerberus_enhanced.tif_full.jpg',\n",
+       " 'https://astrogeology.usgs.gov//cache/images/f5e372a36edfa389625da6d0cc25d905_cerberus_enhanced.tif_full.jpg']"
       ]
      },
-     "execution_count": 25,
+     "execution_count": 26,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -442,7 +488,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 26,
+   "execution_count": 27,
    "metadata": {},
    "outputs": [
     {
@@ -454,7 +500,7 @@
        " 'Valles Marineris Hemisphere Enhanced']"
       ]
      },
-     "execution_count": 26,
+     "execution_count": 27,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -465,10 +511,8 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 27,
-   "metadata": {
-    "scrolled": true
-   },
+   "execution_count": 28,
+   "metadata": {},
    "outputs": [
     {
      "data": {
@@ -476,14 +520,14 @@
        "[{'title': 'Cerberus Hemisphere Enhanced',\n",
        "  'img_url': 'https://astrogeology.usgs.gov//cache/images/f5e372a36edfa389625da6d0cc25d905_cerberus_enhanced.tif_full.jpg'},\n",
        " {'title': 'Schiaparelli Hemisphere Enhanced',\n",
-       "  'img_url': 'https://astrogeology.usgs.gov//cache/images/3778f7b43bbbc89d6e3cfabb3613ba93_schiaparelli_enhanced.tif_full.jpg'},\n",
+       "  'img_url': 'https://astrogeology.usgs.gov//cache/images/f5e372a36edfa389625da6d0cc25d905_cerberus_enhanced.tif_full.jpg'},\n",
        " {'title': 'Syrtis Major Hemisphere Enhanced',\n",
-       "  'img_url': 'https://astrogeology.usgs.gov//cache/images/555e6403a6ddd7ba16ddb0e471cadcf7_syrtis_major_enhanced.tif_full.jpg'},\n",
+       "  'img_url': 'https://astrogeology.usgs.gov//cache/images/f5e372a36edfa389625da6d0cc25d905_cerberus_enhanced.tif_full.jpg'},\n",
        " {'title': 'Valles Marineris Hemisphere Enhanced',\n",
-       "  'img_url': 'https://astrogeology.usgs.gov//cache/images/b3c7c6c9138f57b4756be9b9c43e3a48_valles_marineris_enhanced.tif_full.jpg'}]"
+       "  'img_url': 'https://astrogeology.usgs.gov//cache/images/f5e372a36edfa389625da6d0cc25d905_cerberus_enhanced.tif_full.jpg'}]"
       ]
      },
-     "execution_count": 27,
+     "execution_count": 28,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -512,7 +556,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 31,
+   "execution_count": 30,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -521,7 +565,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 32,
+   "execution_count": 31,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -532,7 +576,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 33,
+   "execution_count": 32,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -541,7 +585,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 34,
+   "execution_count": 33,
    "metadata": {},
    "outputs": [
     {
@@ -576,7 +620,7 @@
        " 8          Recorded By:           Egyptian astronomers]"
       ]
      },
-     "execution_count": 34,
+     "execution_count": 33,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -588,7 +632,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 35,
+   "execution_count": 34,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -600,7 +644,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 36,
+   "execution_count": 35,
    "metadata": {},
    "outputs": [
     {
@@ -609,7 +653,7 @@
        "pandas.core.frame.DataFrame"
       ]
      },
-     "execution_count": 36,
+     "execution_count": 35,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -617,6 +661,13 @@
    "source": [
     "type(df)"
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
   },
   {
    "cell_type": "code",
