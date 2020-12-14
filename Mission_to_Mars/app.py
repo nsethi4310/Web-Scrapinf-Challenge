@@ -15,12 +15,20 @@ mongo = PyMongo(app)
 @app.route("/")
 def index():
     heading = mongo.db.heading.find_one()
-    return render_template("index.html", heading=heading)
+    return render_template("index1.html", heading=heading)
 
-@app.route("/mars_hemispheres")
-def hem():
-    listing = mongo.db.listing.find_one()
-    return render_template("index1.html", listing=listing)
+    # heading = mongo.db.heading.find_one()
+    # return render_template("index.html", heading=heading)
+
+
+    # listing = mongo.db.listing.find_all()
+    # return render_template("index.html", listing=listing)
+
+
+# @app.route("/index1")
+# def hem():
+#     listing = mongo.db.listing.find_one()
+#     return render_template("index1.html", listing=listing)
 
 @app.route("/scrape")
 def scraper():
@@ -33,4 +41,4 @@ def scraper():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(port=8000, debug=True)

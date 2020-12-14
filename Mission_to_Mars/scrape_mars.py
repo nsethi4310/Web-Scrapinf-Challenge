@@ -42,6 +42,56 @@ def scrape():
     results2=results.a['href']
     featured_image_url= 'https://www.jpl.nasa.gov' + results2
     #heading_data = zip(news_title, news_p, featured_image_url)
+
+    heading_list=[]
+    url_list=[]
+
+    url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
+    browser.visit(url)
+    html = browser.html
+    soup = BeautifulSoup(html, 'html.parser')
+    results3=soup.find_all('div', class_='description')
+
+    for result in results3:
+        heading=result.find('h3').text
+        heading_list.append(heading)
+        url=result.find('a')['href']
+        url_list.append(url)
+        new_url=['https://astrogeology.usgs.gov'+ x for x in url_list ]
+
+    full_imgs=[]
+
+    for new in new_url:
+        url=new
+        browser.visit(url)
+        browser.links.find_by_partial_text('Sample').click()
+        html = browser.html
+        soup = BeautifulSoup(html, 'html.parser')
+        results6 = soup.find_all('img', class_='wide-image')
+        img_path = results6[0]['src']
+        new_img = 'https://astrogeology.usgs.gov/' + img_path
+        full_imgs.append(new_img)
+    
+    heading_url = zip(heading_list, full_imgs)
+
+    hemisphereurl = []
+
+# Iterate through the zipped object
+    for x,y in heading_url:
+    
+        hemi_dict = {}
+        
+        # Add hemisphere title to dictionary
+        hemi_dict['title'] = x
+        
+        # Add image url to dictionary
+        hemi_dict['img_url'] = y
+        
+        # Append the list with dictionaries
+        hemisphereurl.append(hemi_dict)
+    
+
+
     heading = {}
         
     heading['news_title'] = news_title
@@ -50,10 +100,29 @@ def scrape():
     heading['news_p'] = news_p
         
     heading['featured_image_url'] = featured_image_url
+
+    heading['hemisphereurls'] = hemisphereurl
+
+    #heading['img_url']= full_imgs
+
+
     browser.quit()
 
-    return heading
+#Reading mars facts into html
+
+    url = 'https://space-facts.com/mars/'
+
     
+    tables = pd.read_html(url)
+    df = tables[0]
+    df.columns = ['Mars Profile', 'Stats']
+    tab_html = df.to_html()
+
+    heading['MarsFacts'] = tab_html
+    
+
+
+    return heading
 
 # %%
    
